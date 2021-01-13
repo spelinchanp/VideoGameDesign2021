@@ -1,0 +1,33 @@
+1:29:33
+
+
+https://www.youtube.com/watch?v=p_mK2LYn_kM
+
+#// making an inventory
+#https://www.youtube.com/watch?v=HQNl3Ff2Lpo&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7&index=5
+# rewatch this one to know what he did with the images: https://www.youtube.com/watch?v=w6_fetj9PIw
+
+// making interactable items **
+youtube.com/watch?v=NCKK7TBlM9c
+
+// making an inventory ** 
+https://www.youtube.com/watch?v=2WnAOV7nHW0
+
+// making enemy AI ( will also give me a basic idea about animal AI ) **
+https://www.youtube.com/watch?v=4Wh22ynlLyk
+
+// making animation **
+https://www.youtube.com/watch?v=hkaysu1Z-N8
+
+// melee combat
+https://www.youtube.com/watch?v=sPiVz1k-fEs
+
+// Shooting **
+https://www.youtube.com/watch?v=LNLVOjbrQj4
+
+// Health bar and oxygen bar 6:22 **
+https://www.youtube.com/watch?v=BLfNP4Sc_iA
+https://www.youtube.com/watch?v=kJ4Ovd5HaMc
+
+// Quests
+https://www.youtube.com/watch?v=e7VEe_qW4oE 14:06
