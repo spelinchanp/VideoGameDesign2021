@@ -17,7 +17,13 @@ public class QuestGoal
 
     public void EnemyKilled()
     {
-        currentAmount++;
+        if (goalType == GoalType.Kill)
+            currentAmount++;
+    }
+    public void ItemCollected()
+    {
+        if (goalType == GoalType.Gathering)
+            currentAmount++;
     }
 }
 

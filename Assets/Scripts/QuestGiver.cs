@@ -24,10 +24,10 @@ public class QuestGiver : MonoBehaviour
         player.quest = quest;
     }
 
-    public void AcceptQuest()
+/*    public void AcceptQuest()
     {
-        /*questWindow.SetActive(false);*/
+        *//*questWindow.SetActive(false);*//*
         quest.isActive = true;
         // give to player
-    }
+    }*/
 }

@@ -1932,6 +1932,10 @@ MonoBehaviour:
     isActive: 0
     title: On the hunt
     description: venture out into the wild and kill three animals to get the reward
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
   player: {fileID: 2042633816}
   questWindow: {fileID: 552102975}
   titleText: {fileID: 1800925997}
@@ -5579,6 +5583,15 @@ MonoBehaviour:
     isActive: 0
     title: 
     description: 
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+  cam: {fileID: 1711052082}
+  animator: {fileID: 2042633817}
+  firePoint: {fileID: 2002697845}
+  QuestWindow: {fileID: 552102975}
+  runSpeed: 6
 --- !u!95 &2042633817
 Animator:
   serializedVersion: 3
@@ -5801,7 +5814,7 @@ PrefabInstance:
       objectReference: {fileID: 2002697845}
     - target: {fileID: 1421108436956722974, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421108436956722974, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
       propertyPath: UI_Inventory
@@ -5811,5 +5824,6 @@ PrefabInstance:
       propertyPath: QuestWindow
       value: 
       objectReference: {fileID: 552102975}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1421108436956722974, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}

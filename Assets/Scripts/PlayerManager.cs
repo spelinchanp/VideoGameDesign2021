@@ -23,6 +23,8 @@ public class PlayerManager : MonoBehaviour
 
     public Quest quest;
 
+    public int experience;
+
 
     private void Awake()
     {
@@ -49,21 +51,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-
+        body = GetComponent<Rigidbody2D>();
     }
-
-    private void Update()
-    {
-        // Lose 1 oxygen every 15 seconds/60 frames
-        if (oxy_timer <= 900)
-            oxy_timer++;
-        else
-        {
-            LoseOxygen(1);
-            oxy_timer = 0;
-        }
-    }
-
 
     void TakeDamage(int damage)
     {
@@ -121,5 +110,100 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void GoBattle()
+    {
+        currentHealth -= 1;
+
+        if (quest.isActive)
+        {
+            quest.goal.EnemyKilled();
+            if(quest.goal.IsReached())
+            {
+                experience += quest.questExperience;
+                quest.Complete();
+            }
+        }
+    }
+
     // Player Control
+    Rigidbody2D body;
+    public Camera cam;
+    public Animator animator;
+    public GameObject firePoint;
+    public GameObject QuestWindow;
+
+    // angle of the mouseposition relative to the player
+    float lookAngle;
+
+    float horizontal;
+    float vertical;
+    float moveLimiter = 0.7f;
+    public float runSpeed;
+
+    Vector2 mousePos;
+
+    void FixedUpdate()
+    {
+        if (horizontal != 0 && vertical != 0) // Check for diagonal movement
+        {
+            // limit movement speed diagonally, so you move at 70% speed
+            horizontal *= moveLimiter;
+            vertical *= moveLimiter;
+        }
+
+        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+
+        // Look direction
+        Vector2 lookDir = mousePos - body.position;
+        lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        //Debug.Log(lookAngle);
+        if ((lookAngle < -90) || lookAngle > 100)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
+        // Rotate the firePoint
+        Rigidbody2D fpRb = firePoint.GetComponent<Rigidbody2D>();
+        fpRb.rotation = lookAngle;
+    }
+
+    private void Update()
+    {
+        // Lose 1 oxygen every 15 seconds/60 frames
+        if (oxy_timer <= 900)
+            oxy_timer++;
+        else
+        {
+            LoseOxygen(1);
+            oxy_timer = 0;
+        }
+
+
+        // Toggle the inventory/quest window on and off
+        if (Input.GetKeyDown("tab"))
+        {
+            UI_Inventory.SetActive(!UI_Inventory.activeSelf);
+            QuestWindow.SetActive(!QuestWindow.activeSelf);
+        }
+
+        // TEST for questing system
+        if (Input.GetKeyDown("space"))
+        {
+            GoBattle();
+        }
+
+        // Gives a value between -1 and 1
+        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
+        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
+        // Get the mouse position
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
 }
