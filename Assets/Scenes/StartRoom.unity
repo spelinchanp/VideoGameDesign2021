@@ -1724,8 +1724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69.69, y: -90.04}
-  m_SizeDelta: {x: 136.26965, y: 137.92633}
+  m_AnchoredPosition: {x: 68.135, y: -120.6}
+  m_SizeDelta: {x: 136.26965, y: 160.81583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873520783
 MonoBehaviour:
@@ -1928,14 +1928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e7f82fef9d80d48b4cdbd98302e829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest:
-    isActive: 0
-    title: On the hunt
-    description: venture out into the wild and kill three animals to get the reward
-    goal:
-      goalType: 0
-      requiredAmount: 0
-      currentAmount: 0
   player: {fileID: 2042633816}
   questWindow: {fileID: 552102975}
   titleText: {fileID: 1800925997}
@@ -2155,7 +2147,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 2
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -5008,8 +5000,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.711, y: 0.0000071526}
-  m_SizeDelta: {x: 103.41614, y: 31.904404}
+  m_AnchoredPosition: {x: 68.136, y: 0.9}
+  m_SizeDelta: {x: 136.26697, y: 33.665146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1800925997
 MonoBehaviour:
@@ -5578,15 +5570,7 @@ MonoBehaviour:
   currentOxygen: 0
   oxygenBar: {fileID: 38461407}
   oxy_timer: 0
-  QuestGiver: {fileID: 1041831363}
-  quest:
-    isActive: 0
-    title: 
-    description: 
-    goal:
-      goalType: 0
-      requiredAmount: 0
-      currentAmount: 0
+  experience: 0
   cam: {fileID: 1711052082}
   animator: {fileID: 2042633817}
   firePoint: {fileID: 2002697845}
@@ -5710,7 +5694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421108436956722970, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1421108436956722970, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
       propertyPath: m_Enabled
@@ -5744,6 +5728,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.64
       objectReference: {fileID: 0}
+    - target: {fileID: 1421108436956722970, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421108436956722970, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1421108436956722971, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03
@@ -5754,7 +5746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421108436956722971, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1421108436956722971, guid: 75d7806d00d9e2f44ae46d4034e7bfe1, type: 3}
       propertyPath: m_LocalRotation.x

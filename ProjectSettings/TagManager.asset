@@ -43,7 +43,10 @@ TagManager:
   - name: ground
     uniqueID: 4096494899
     locked: 0
-  - name: other
+  - name: Item
+    uniqueID: 2052710849
+    locked: 0
+  - name: Player
     uniqueID: 826137709
     locked: 0
   - name: Default

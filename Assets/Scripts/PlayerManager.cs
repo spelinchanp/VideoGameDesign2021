@@ -19,8 +19,6 @@ public class PlayerManager : MonoBehaviour
     public OxygenBar oxygenBar;
     public int oxy_timer = 0;
 
-    public QuestGiver QuestGiver;
-
     public Quest quest;
 
     public int experience;
@@ -45,8 +43,6 @@ public class PlayerManager : MonoBehaviour
         currentOxygen = maxOxygen1;
         oxygenBar.SetMaxOxygen(maxOxygen1);
 
-
-        QuestGiver.UpdateQuestWindow();
     }
 
     private void Start()
@@ -74,6 +70,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        // Pick up an item
         ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
         if (itemWorld != null)
         {
@@ -110,13 +107,11 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void GoBattle()
+    public void TestFlowerQuest()
     {
-        currentHealth -= 1;
-
         if (quest.isActive)
         {
-            quest.goal.EnemyKilled();
+            quest.goal.ItemCollected();
             if(quest.goal.IsReached())
             {
                 experience += quest.questExperience;
@@ -193,7 +188,7 @@ public class PlayerManager : MonoBehaviour
         // TEST for questing system
         if (Input.GetKeyDown("space"))
         {
-            GoBattle();
+            TestFlowerQuest();
         }
 
         // Gives a value between -1 and 1
