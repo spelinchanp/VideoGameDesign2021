@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private UI_Inventory uiInventory;
     public GameObject UI_Inventory;
+    public KeyItem keyItem;
 
     public int maxHealth = 100;
     public int currentHealth;
