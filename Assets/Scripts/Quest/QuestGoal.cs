@@ -34,10 +34,16 @@ public class QuestGoal
         if (goalType == GoalType.Gathering)
             currentAmount++;
     }
+
+    public void TutorialCompleted()
+    {
+        currentAmount++;
+    }
 }
 
 public enum GoalType
 {
     Kill, 
-    Gathering
+    Gathering,
+    Tutorial
 }

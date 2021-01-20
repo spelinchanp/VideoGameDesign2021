@@ -23,6 +23,11 @@ public class KeyItems : MonoBehaviour
                 selectedKeyItem = 0;
             else
                 selectedKeyItem++;
+
+            if (!playerManager.unlockedOxygenProc && selectedKeyItem == 2)
+            {
+                selectedKeyItem = 0;
+            }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
@@ -30,6 +35,11 @@ public class KeyItems : MonoBehaviour
                 selectedKeyItem = transform.childCount - 1;
             else
                 selectedKeyItem--;
+
+            if (!playerManager.unlockedOxygenProc && selectedKeyItem == 2)
+            {
+                selectedKeyItem = 0;
+            }   
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -42,11 +52,13 @@ public class KeyItems : MonoBehaviour
             selectedKeyItem = 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+        if (playerManager.unlockedOxygenProc)
         {
-            selectedKeyItem = 2;
+            if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+            {
+                selectedKeyItem = 2;
+            }
         }
-
         if (previousSelectedKeyItem != selectedKeyItem)
         {
             SelectKeyItem();

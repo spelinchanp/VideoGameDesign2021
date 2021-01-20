@@ -10,10 +10,9 @@ public class Item
     public enum ItemType
     {
         RedOxygenFlower, 
-        HealthPotion,
-        ManaPotion,
-        Coin,
-        MedKit,
+        OxMeat,
+        Iron,
+        Null,
     }
 
     public ItemType itemType;
@@ -26,12 +25,10 @@ public class Item
             default:
                 break;
             case ItemType.RedOxygenFlower:        return ItemAssets.Instance.redOxygenFlowerSprite;
-            case ItemType.HealthPotion: return ItemAssets.Instance.healthPotionSprite;
-            case ItemType.ManaPotion:   return ItemAssets.Instance.manaPotionSprite;
-            case ItemType.Coin:         return ItemAssets.Instance.coinSprite;
-            case ItemType.MedKit:       return ItemAssets.Instance.medkitSprite;
+            case ItemType.OxMeat:                 return ItemAssets.Instance.oxMeatSprite;
+            case ItemType.Null:                   return ItemAssets.Instance.nullSprite;
         }
-        return ItemAssets.Instance.redOxygenFlowerSprite;
+        return ItemAssets.Instance.nullSprite;
     }
 
     public bool isStackable()
@@ -39,16 +36,12 @@ public class Item
         switch (itemType)
         {
             default:
-            case ItemType.Coin:
-                return true;
-            case ItemType.HealthPotion:
-                return false;
-            case ItemType.ManaPotion:
+            case ItemType.OxMeat:
                 return false;
             case ItemType.RedOxygenFlower:
                 return true;
-            case ItemType.MedKit:
-                return false;
+            case ItemType.Null:
+                return true;
         }
     }
 }

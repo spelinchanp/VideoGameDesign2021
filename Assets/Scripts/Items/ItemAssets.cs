@@ -14,8 +14,6 @@ public class ItemAssets : MonoBehaviour
     public Transform pfItemWorld;
 
     public Sprite redOxygenFlowerSprite;
-    public Sprite healthPotionSprite;
-    public Sprite manaPotionSprite;
-    public Sprite coinSprite;
-    public Sprite medkitSprite;
+    public Sprite oxMeatSprite;
+    public Sprite nullSprite;
 }

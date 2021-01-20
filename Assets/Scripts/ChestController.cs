@@ -5,12 +5,13 @@ using UnityEngine;
 public class ChestController : MonoBehaviour
 {
     public bool isOpen;
+    public PlayerManager player;
     //public Animator anim;
 
     public void OpenChest()
     {
         isOpen = !isOpen;
         Debug.Log("Chest was interacted with...");
-        //anim.SetBool("IsOpen", isOpen);
+        player.unlockedOxygenProc = true;
     }
 }
