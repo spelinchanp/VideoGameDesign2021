@@ -108,6 +108,16 @@ public class PlayerManager : MonoBehaviour
                 lastItemPickedUp = item.itemType;
                 itemWorld.DestroySelf();
             }
+            return;
+        }
+
+        Ox ox = collider.GetComponent<Ox>();
+        if (ox != null)
+        {
+            if (ox.isAngry)
+            {
+                TakeDamage(20);
+            }
         }
     }
 

@@ -34,6 +34,7 @@ public class Ox : MonoBehaviour
 
         if (isAngry)
         {
+            moveSpeed = 4f;
             Vector3 direction = player.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             if ((angle < -90) || angle > 100)
@@ -75,7 +76,7 @@ public class Ox : MonoBehaviour
     {
         if (collider.tag == "bullet")
         {
-            Debug.Log(currentHealth);
+            isAngry = true;
             takeDamage(5);
         }
     }
