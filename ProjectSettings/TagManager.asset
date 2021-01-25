@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Currency
   - FirePoint
+  - bullet
   layers:
   - Default
   - TransparentFX

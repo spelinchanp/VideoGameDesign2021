@@ -45,6 +45,8 @@ public class PlayerManager : MonoBehaviour
         currentOxygen = maxOxygen1;
         oxygenBar.SetMaxOxygen(maxOxygen1);
 
+        Debug.Log(keyItem.ToString());
+
     }
 
     private void Start()

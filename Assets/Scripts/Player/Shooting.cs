@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
 
     public GameObject UI_Inventory;
+    public PlayerManager player;
 
     public float bulletForce = 5f;
         
@@ -22,8 +23,8 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Don't shoot if the inventory is open
-        if (Input.GetButtonDown("Fire1") && UI_Inventory.activeSelf != true)
+        // Don't shoot if the inventory is open or gun isn't selected.
+        if (Input.GetButtonDown("Fire1") && UI_Inventory.activeSelf != true && player.keyItem == KeyItem.Gun)
         {
             Shoot();
         }

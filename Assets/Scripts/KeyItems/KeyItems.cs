@@ -11,6 +11,7 @@ public class KeyItems : MonoBehaviour
     private void Start()
     {
         SelectKeyItem();
+        playerManager.keyItem = KeyItem.MiningTool;
     }
 
     private void Update()
