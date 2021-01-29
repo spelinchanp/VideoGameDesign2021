@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     // Player management
-    private Inventory inventory;
+    public Inventory inventory;
 
     [SerializeField] private UI_Inventory uiInventory;
     public GameObject UI_Inventory;
@@ -108,17 +108,17 @@ public class PlayerManager : MonoBehaviour
                 lastItemPickedUp = item.itemType;
                 itemWorld.DestroySelf();
             }
-            return;
+           /* return;*/
         }
 
-        Ox ox = collider.GetComponent<Ox>();
+/*        Ox ox = collider.GetComponent<Ox>();
         if (ox != null)
         {
             if (ox.isAngry)
             {
                 TakeDamage(20);
             }
-        }
+        }*/
     }
 
     private void UseItem(Item item)

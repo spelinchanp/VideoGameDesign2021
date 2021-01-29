@@ -92,7 +92,7 @@ public class QuestGiver : MonoBehaviour
     private void Start()
     {
         questWindow.SetActive(true);
-        quest = questList[3];
+        quest = questList[8];
         SetQuestWindow();
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ox : MonoBehaviour
 {
+    public Animator anim;
     public Transform player;
     public float moveSpeed = 1f;
 
@@ -34,6 +35,7 @@ public class Ox : MonoBehaviour
 
         if (isAngry)
         {
+            anim.SetFloat("speed", 6);
             moveSpeed = 4f;
             Vector3 direction = player.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -58,10 +60,12 @@ public class Ox : MonoBehaviour
                 float moveOrNot = Random.Range(0f, 1f);
                 if (moveOrNot >= .50)
                 {
+                    anim.SetFloat("speed", 1);
                     movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
                     moveTimer = 0;
                 } else
                 {
+                    anim.SetFloat("speed", 0);
                     movement = new Vector2(0, 0);
                     moveTimer = 0;
                 }
@@ -94,7 +98,11 @@ public class Ox : MonoBehaviour
 
     void die()
     {
-        // drop meat
+        // drop meat    
+        Item meat = new Item();
+        meat.amount = Random.Range(1, 3);
+        meat.itemType = Item.ItemType.OxMeat;
+        ItemWorld.SpawnItemWorld(transform.position, meat);
 
         // destroy ox object
         Destroy(gameObject);
