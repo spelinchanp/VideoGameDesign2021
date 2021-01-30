@@ -26,6 +26,7 @@ public class Item
                 break;
             case ItemType.RedOxygenFlower:        return ItemAssets.Instance.redOxygenFlowerSprite;
             case ItemType.OxMeat:                 return ItemAssets.Instance.oxMeatSprite;
+            case ItemType.Iron:                   return ItemAssets.Instance.ironSprite;
             case ItemType.Null:                   return ItemAssets.Instance.nullSprite;
         }
         return ItemAssets.Instance.nullSprite;
@@ -38,6 +39,8 @@ public class Item
             default:
             case ItemType.OxMeat:
                 return false;
+            case ItemType.Iron:
+                return true;
             case ItemType.RedOxygenFlower:
                 return true;
             case ItemType.Null:

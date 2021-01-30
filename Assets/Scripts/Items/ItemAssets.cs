@@ -13,6 +13,7 @@ public class ItemAssets : MonoBehaviour
 
     public Transform pfItemWorld;
 
+    public Sprite ironSprite;
     public Sprite redOxygenFlowerSprite;
     public Sprite oxMeatSprite;
     public Sprite nullSprite;

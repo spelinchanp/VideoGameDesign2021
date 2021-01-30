@@ -14,6 +14,7 @@ public class ItemWorld : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
+        textMeshPro.sortingOrder = 5;
     }
 
     public void SetItem(Item item)
