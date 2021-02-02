@@ -26,7 +26,6 @@ public class IronOre : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("christ jsut work");
         if (player.keyItem == KeyItem.MiningTool)
             currentHealth -= 15;
     }
